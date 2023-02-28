@@ -1,0 +1,64 @@
+
+       	
+<div class="catContainer">
+	<div class="button">
+			<button type="button" class="btn btn-primary" routerLink="/add-categorie">Ajouter Categorie</button>
+		</div>
+   
+		<div class="table catTable">
+			<ul class="table-header">
+				<li class="HItem HItem1">
+					Id Categorie
+				</li>
+				<li class="HItem HItem2">
+					Label
+				</li>
+				<li class="HItem HItem3">
+					Actions
+				</li>
+			</ul>
+			<ul  *ngFor = "let categorie of categories" class="catTable-body">
+				<li class="BItem BItem1">
+					{{ categorie.id }}
+				</li>
+				<li class="BItem BItem2">
+					{{ categorie.label }}
+				</li>
+				<li class="BItem BItem3">
+					<div class="action-toggle">
+						<span>...</span>
+						<div class="action-container">
+							<button (click) = "updateCategorie(categorie.id)" type="button" class="btn btnUpdate" >Update</button>
+							<button (click) = "deleteCategorie(categorie.id)" type="button" class="btn btnDelete" >Delete</button>
+						</div>
+					</div>
+				</li>
+				<li class="editCat" *ngIf="editCatEnable && id == categorie.id">
+					<div class="popup-container">
+						<div class="popup-header">
+							<span class="close" (click)="close()">X</span>
+						</div>
+						<div class="popup-body">
+							<form>
+
+								<div class="form-group" >
+									<label> Id Categorie</label>
+									<input type="text" readonly class ="form-control" id = "id"
+										[(ngModel)] = "categorie.id" name = "id">
+								</div>
+							
+								<div class="form-group">
+									<label>    Label *</label>
+									<input type="text" class ="catInput" id = "label"
+										[(ngModel)] = "newcategorie.label" name = "label">
+								</div>
+							
+							
+								<button (click)="onSubmit()" class = "btn btn-success" type ="submit" >Modifier</button>
+							</form>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>  
+</div>

@@ -1,0 +1,28 @@
+<form (ngSubmit) = "onSubmit()">
+    
+    <div class="form-group" >
+        <label> Id Ligne Commande</label>
+        <input type="text" readonly class ="form-control" id = "id"
+            [(ngModel)] = "ligneCommande.id" name = "id">
+    </div>
+
+    <div class="form-group">
+        <label>      Quantité Commandé</label>
+        <input type="text" class ="form-control" id = "quantiteCommande"
+            [(ngModel)] = "ligneCommande.quantiteCommande" name = "quantiteCommande">
+    </div>
+    
+    <div class="form-group">
+        <label> Id Commande</label>
+        <input type="text" class ="form-control" id = "idCommande"
+            [(ngModel)] = "ligneCommande.idCommande" name = "idCommande">
+    </div>
+
+    
+    
+
+
+    <button class = "btn btn-success" type ="submit">Modifier</button>
+
+</form>
+

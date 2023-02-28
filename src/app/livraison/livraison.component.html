@@ -1,0 +1,43 @@
+
+       		<div class="button">
+                <button type="button" class="btn btn-primary" routerLink="/add-livraison">Ajouter Livraison</button>
+            </div>
+       <br>
+       <br>
+       
+
+				<table class="table"  id="tblCustomers">
+					
+					<thead class="thead-dark">
+					  <tr class="header">
+					
+						<th scope="col">Id Livraison</th>
+						<th scope="col">Etat Livraison</th>
+						<th scope="col">Date Livraison</th>
+						<th scope="col">Prix Livraison</th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody id="geeks">
+					 
+					
+						<tr *ngFor = "let livraison of livraisons">
+							<td> {{ livraison.id }} </td>
+							<td> {{ livraison.etatLivraison }} </td>
+							<td> {{ livraison.dateLivraison }} </td>
+							<td> {{ livraison.prixLivraison }} </td>
+							
+							<td><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    							<button (click) = "updateLivraison(livraison.id)" type="button" class="btn btn-outline-success" routerLink="/modifier-livraison">Update</button>
+        						<button (click) = "deleteLivraison(livraison.id)" type="button" class="btn btn-outline-danger" >Delete</button></div>
+    						</td>
+					  </tr>
+
+					</tbody>
+				  </table>
+
+                  <div>
+    
+                    <input type="button" class="btn btn-secondary" id="btnExport" value="Export" onclick="Export()" />
+                </div>
+                

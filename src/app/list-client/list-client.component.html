@@ -1,0 +1,88 @@
+<div class="scrollmenu">
+	<div class="factContainer">
+       		<div class="button">
+                <button type="button" class="btn btn-primary" routerLink="/add-client">Ajouter Client</button>
+            </div>
+			<div class="table catTable">
+				<ul class="table-header">
+					<li class="HItem HItem1">
+						Nom d'utilisateur
+					</li>
+					<li class="HItem HItem2">
+						Email
+					</li>
+					<li class="HItem HItem2">
+						Role
+					</li>
+					<li class="HItem HItem3">
+						Actions
+					</li>
+				</ul>
+				<ul  *ngFor = "let client of clients" class="catTable-body">
+					<li class="BItem BItem1">
+						{{ client.username }} 
+					</li>
+					<li class="BItem BItem2">
+						{{ client.email }} 
+					</li>
+					<li class="BItem BItem2">
+						{{ client.roles }} 
+					</li>
+					
+					<li class="BItem BItem3">
+						<div class="action-toggle">
+							<span>...</span>
+							<div class="action-container">
+								<button (click) = "updateClient(client.id)" type="button" class="btn btnUpdate">Mise à Jour</button>
+        						<button (click) = "deleteClient(client.id)" type="button" class="btn btnDelete" >Supprimer</button>
+							</div>
+							
+						</div>
+					</li>
+					<li class="editCat" *ngIf="editUtiliEnable && id == client.id">
+						<div class="popup-container">
+							<div class="popup-header">
+								<span class="close" (click)="close()">X</span>
+							</div>
+							<div class="popup-body scroll-container">
+								<form>
+    
+									<div class="form-group" >
+										<label> Nom d'utilisateur</label>
+										<input type="text" class ="form-control" id = "username"
+											[(ngModel)] = "newClient.username" name = "username">
+									</div>
+								
+									<div class="form-group">
+										<label>      Email</label>
+										<input type="text" class ="form-control" id = "email"
+											[(ngModel)] = "newClient.email" name = "email">
+									</div>
+								
+									<div class="form-group">
+										<label>      Password</label>
+										<input type="text" class ="form-control" id = "plainPassword"
+											[(ngModel)] = "newClient.plainPassword" name = "plainPassword">
+									</div>
+									<div class="form-group">
+										<label> Role</label>
+										<input type="text" class ="form-control" id = "roles"
+											[(ngModel)] = "newClient.roles" name = "roles">
+									</div>
+									<button (click)="onSubmit()" class = "btn btn-success" type ="submit" >Modifier</button>
+								
+								</form>
+							</div>
+						</div>
+					</li>			
+				</ul>
+			</div>
+							
+			<div>
+    
+				<input type="button" class="btn btn-secondary" id="btnExport" value="Export" onclick="Export()" />
+			</div>
+			
+</div>
+
+</div>	

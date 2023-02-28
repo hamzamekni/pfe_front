@@ -1,0 +1,30 @@
+<form (ngSubmit) = "onSubmit()" >
+    
+					
+					
+					
+                        
+    
+
+    <div class="form-group">
+        <label> Etat Livraison</label>
+        <input type="text" class ="form-control" id = "etatLivraison	"
+        placeholder="Etat Livraison" [(ngModel)] = "livraison.etatLivraison	" name = "etatLivraison	">
+    </div>
+    <div class="form-group">
+        <label> Date Livraison</label>
+        <input type="date" class ="form-control" id = "dateLivraison"
+        placeholder="Date Livraison" [(ngModel)] = "livraison.dateLivraison" name ="dateLivraison">
+    </div>
+    <div class="form-group">
+        <label> Prix Livraison</label>
+        <input type="text" class ="form-control" id = "prixLivraison"
+        placeholder="Prix Livraison" [(ngModel)] = "livraison.prixLivraison" name ="prixLivraison">
+    </div>
+    
+   
+    <button class = "btn btn-outline-primary" type ="submit">Confirmer</button>
+    <button class = "btn btn-outline-danger" type ="submit" routerLink="/livraison">
+        Annuler</button>
+
+</form>

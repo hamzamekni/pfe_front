@@ -1,0 +1,35 @@
+<app-header
+[navbarBrandRouterLink]="['/dashboard']"
+[fixed]="true"
+[navbarBrandFull]="{src: 'assets/img/brand/gestion2.jpg', width: 60, height: 40, alt: 'CoreUI Logo'}"
+[navbarBrandMinimized]="{src: 'assets/img/brand/img1.jpg', width: 30, height: 30, alt: 'CoreUI Logo'}"
+[sidebarToggler]="'lg'"
+[asideMenuToggler]=false>
+  <ul class="nav navbar-nav ml-auto">
+  
+  </ul>
+<button type="button" class="btn btn-danger" routerLink="/login">
+  Se déconnecter</button>
+</app-header>
+<div class="app-body">
+  <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized" (minimizedChange)="toggleMinimize($event)">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+    <!-- Breadcrumb -->
+    <!-- breaking change 'cui-breadcrumb' -->
+    <cui-breadcrumb>
+ 
+ 
+    </cui-breadcrumb>
+
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+      <lib-ng-toast></lib-ng-toast>
+    </div>
+  </main>
+ 
+</div>
+

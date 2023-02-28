@@ -1,0 +1,44 @@
+
+       		<div class="button">
+                <button type="button" class="btn btn-primary" routerLink="/add-cam">Ajouter Camion</button>
+            </div>
+       <br>
+       <br>
+       
+       <table class="table"  id="tblCustomers">
+					
+            <thead class="thead-dark">
+              <tr class="header">
+                <th scope="col">Matricule camion</th>
+                <th scope="col">Nom du chauffeur</th>
+            <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor = "let camion of camions">
+            
+            
+                <td> {{ camion.matricule }} </td>
+                <td> {{ camion.chauffeur }} </td>
+        
+        <td><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button (click) = "updateCamion(camion.idca)" type="button" class="btn btn-outline-success" >Update</button>
+        <button (click) = "deleteCamion(camion.idca)" type="button" class="btn btn-outline-danger" >Delete</button>
+        </div>
+        </td>
+              </tr>
+        
+            </tbody>
+          </table>
+
+
+
+<div>
+    
+    <input type="button" class="btn btn-secondary" id="btnExport" value="Export" onclick="Export()" />
+</div>
+
+
+
+
+

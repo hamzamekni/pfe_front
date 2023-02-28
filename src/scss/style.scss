@@ -1,0 +1,264 @@
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+@import "custom";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+
+
+
+// Categorie Section
+
+li {
+    list-style: none;
+}
+
+body{
+    background: white;
+}
+.catContainer{
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 2px 15px 1px #888888;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+}
+.comContainer{
+    width: 1500px;
+    height: 100%;
+    box-shadow: 2px 2px 15px 1px #888888;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+}
+.factContainer{
+    width: 1500px;
+    height: 100%;
+    box-shadow: 2px 2px 15px 1px #888888;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+}
+.prodContainer{
+    width: 1500px;
+    height: 100%;
+    box-shadow: 2px 2px 15px 1px #888888;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+}
+.button{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.table{
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: fit-content;
+}
+.table-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgb(211, 208, 208);
+    padding: 10px 5px;
+    background: rgb(245, 244, 244);
+    margin: 0;
+}
+.HItem, .BItem {
+    width: 100%;
+}
+.HItem3, .BItem3 {
+    width: 25%;
+}
+.BItem1, .BItem2 {
+    display: flex;
+    align-items: center;
+}
+.BItem1 {
+    padding-left: 10px;
+}
+
+.catTable-body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(235, 235, 235) !important;
+    position: relative;
+}
+.action-toggle {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+.action-container{
+    display: none;
+    position: absolute;
+    width: 100px;
+    top: 0;
+    left: 0;
+    transform: translate(-50%);
+    z-index: 9;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.2);
+    
+}
+.action-toggle:hover > .action-container{
+    display: flex;
+    flex-direction: column;
+}
+.btnUpdate:hover, .btnDelete:hover {
+    background: rgb(233, 231, 231);
+}
+
+.editCat {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 20px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editProd {
+    margin-top: 40px;
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 20px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editUtili {
+    margin-top: 40px;
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 20px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editCom {
+    margin-top: 40px;
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 20px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-container {
+    width: min(300px, 80%);
+    
+    background-color: white !important;
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    border-radius: 10px;
+}
+.popup-header {
+    
+    width: 100%;
+    background: rgb(241, 241, 241);
+    border-bottom: 1px solid rgb(219, 218, 218);
+    border-radius: 10px 10px 0px 0px;
+}
+.popup-body {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+}
+.close {
+    color: red;
+    transform: scaleX(1.3);
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.catInput{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgba(0, 150, 250, 0.4);
+    padding: 6px 10px;
+}
+.catInput:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(0, 150, 250);
+}
+
+
+.side{
+    border-radius: 3rem;
+}
+.buttonH{
+    margin-right: 100px;
+}
+
+.scroll-container {
+    display: block;
+    text-align: center;
+    height: 500px;
+    width: 300px;
+     overflow-y: scroll;
+     scroll-behavior: smooth;
+  }
+
+
+.scrollmenu {
+    
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px 1px #888888;
+    overflow: auto;
+  }
+  
+ 

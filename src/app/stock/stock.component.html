@@ -1,0 +1,41 @@
+
+       		<div class="button">
+                <button type="button" class="btn btn-primary" routerLink="/add-stock">Ajouter Stock</button>
+            </div>
+       <br>
+       <br>
+       
+
+				<table class="table"  id="tblCustomers">
+					
+					<thead class="thead-dark">
+					  <tr class="header">
+					
+						<th scope="col">Id Stock</th>
+						<th scope="col">Quantité Stock</th>
+						<th scope="col">Status</th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody id="geeks">
+					 
+					
+						<tr *ngFor = "let stock of stocks">
+							<td> {{ stock.id }} </td>
+							<td> {{ stock.quantiteStock }} </td>
+							<td> {{ stock.status }} </td>
+							
+							<td><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    							<button (click) = "updateStock(stock.id)" type="button" class="btn btn-outline-success" routerLink="/modifier-stock">Update</button>
+        						<button (click) = "deleteStock(stock.id)" type="button" class="btn btn-outline-danger" >Delete</button></div>
+    						</td>
+					  </tr>
+
+					</tbody>
+				  </table>
+
+                  <div>
+    
+                    <input type="button" class="btn btn-secondary" id="btnExport" value="Export" onclick="Export()" />
+                </div>
+                

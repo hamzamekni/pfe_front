@@ -1,0 +1,37 @@
+<form (ngSubmit) = "onSubmit()">
+    
+    <div class="form-group" >
+        <label> Id Facture</label>
+        <input type="text" readonly class ="form-control" id = "id"
+            [(ngModel)] = "livraison.id" name = "id">
+    </div>
+
+    <div class="form-group">
+        <label>      Etat Livraison</label>
+        <input type="text" class ="form-control" id = "etatLivraison"
+            [(ngModel)] = "livraison.etatLivraison" name = "etatLivraison">
+    </div>
+
+    <div class="form-group">
+        <label>      Date Livraison </label>
+        <input type="date" class ="form-control" id = "dateLivraison"
+            [(ngModel)] = "livraison.dateLivraison" name = "dateLivraison">
+    </div>
+
+
+ 
+   
+
+ 
+    <div class="form-group">
+        <label> Prix Livraison</label>
+        <input type="text" class ="form-control" id = "prixLivraison"
+            [(ngModel)] = "livraison.prixLivraison" name = "prixLivraison">
+    </div>
+    
+
+
+    <button class = "btn btn-success" type ="submit">Modifier</button>
+
+</form>
+

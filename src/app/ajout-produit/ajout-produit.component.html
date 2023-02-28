@@ -1,0 +1,53 @@
+
+<form>
+    <div>
+    <input type="file" id="image" name="image" [(ngModel)] = "test" (change)="onFileChanged($event)"  >
+</div> 
+    <br>
+
+    <div class="form-group">
+        <label> Nom Produit</label>
+        <input type="text" class ="form-control" id = "name"
+        placeholder="Nom Produit" name ="name"  [(ngModel)] = "produit.nameProduct">
+    </div>
+    <div class="form-group">
+        <label> TVA</label>
+        <input type="number" class ="form-control" id = "tva"
+        placeholder="TVA" name ="tva"  [(ngModel)] = "produit.tva">
+    </div>
+    <div class="form-group">
+        <label> Prix Produit</label>
+        <input type="text" class ="form-control" id = "prix"
+        placeholder="Prix Produit" name ="prix"  [(ngModel)] = "produit.prixProgduit">
+    </div>
+    <div class="form-group">
+        <label> Description</label>
+        <input type="text" class ="form-control" id = "description"
+        placeholder="Description" name ="description" [(ngModel)] = "produit.description">
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input " type="checkbox" value="" id="status" name="status" [(ngModel)] = "produit.status">
+        <label class="form-check-label" for="flexCheckDefault">
+          Status
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label> Id Stock</label>
+        <input type="text" class ="form-control" id = "idStock"
+            [(ngModel)] = "produit.idStock" name = "idStock">
+    </div>
+    <div class="form-group">
+        <label> Id Ligne Commande</label>
+        <input list="browsers" class ="form-control" id = "idLigne"
+            [(ngModel)] = "produit.idLigne" name = "idLigne">
+    </div>
+    
+
+    <button class = "btn btn-outline-primary" type ="submit"  (click)="onSubmit()">Confirmer</button>
+    <button class = "btn btn-outline-danger" type ="submit" routerLink="/list-produit">
+        Annuler</button>
+
+</form>
+

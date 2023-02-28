@@ -1,0 +1,132 @@
+<div class="auth-wrapper auth-v2">
+  <div class="auth-inner row m-0">
+   
+    <!-- /Brand logo-->
+    <!-- Left Text-->
+    <div class=" d-lg-flex col-lg-8  " >
+      <div class="  img ">
+        <img
+          class="img-fluid"
+          src="/assets/img/224411825e_50171213_crm.jpg" width="5000" height="6000" 
+          alt="Register "
+        />
+      </div>
+    </div>
+    <!-- /Left Text-->
+    <!-- Register-->
+    <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+        <h2 class="card-title font-weight-bold mb-1">L'aventure commence ici 🚀</h2>
+        <p class="card-text mb-2">Rendez la gestion de votre application simple et amusante!</p>
+        <form class="auth-register-form mt-2" [formGroup]="form" (submit)="submit()" >
+          <div class="form-group">
+            <label for="register-username" class="form-label">Nom d'utilisateur</label>
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              placeholder=""
+              aria-describedby="register-username"
+              tabindex="1"
+              autofocus
+            />
+            <div class="invalid-feedback">
+              <div >Username is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="register-email" class="form-label">Email</label>
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              placeholder=""
+              aria-describedby="register-email"
+              tabindex="2"
+            />
+            
+          </div>
+
+          <div class="form-group">
+            <label for="register-password" class="form-label">
+              Mot de passe</label>
+
+            <div class="input-group input-group-merge form-password-toggle">
+              <input
+                formControlName="plainPassword"
+                type="password"
+                class="form-control form-control-merge"
+                placeholder="············"
+                aria-describedby="register-password"
+                tabindex="3"
+              />
+              
+            </div>
+           
+          </div>
+          
+          <button class="btn btn-primary btn-block" tabindex="5" type="submit" rippleEffect>Sign up</button>
+        </form>
+        <p class="text-center mt-2">
+          <span>Already have an account?</span
+          ><a routerLink="/login"><span>&nbsp;Connectez-vous à la place</span></a>
+        </p>
+        <div class="divider my-2">
+          <div class="divider-text">or</div>
+        </div>
+        <div class="social">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+         <a href="#" class="fa fa-google"></a>
+
+        </div>
+        
+      </div>
+    </div>
+    <!-- /Register-->
+  </div>
+</div>
+<style>
+  .img{
+  margin-top: 50px;
+
+
+}
+.divider{
+  text-align: center;
+}
+.social{
+  text-align: center;
+}
+.btn{
+  margin-top: 9px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+</style>

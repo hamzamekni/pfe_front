@@ -1,0 +1,25 @@
+<form (ngSubmit) = "onSubmit()" >
+    
+                      
+    <div class="form-group">
+     
+        <input type="text" class ="form-control" id = "matricule"
+        placeholder="Matricule camion"  
+        [(ngModel)] = "camion.matricule" name = "matricule">
+    </div>
+
+    <div class="form-group">
+   
+        <input type="text" class ="form-control" id = "chauffeur"
+        placeholder="Nom du chauffeur" 
+        [(ngModel)] = "camion.chauffeur" name = "chauffeur">
+    </div>
+  
+
+
+<div>    <button class = "btn btn-outline-primary" type ="submit">Confirmer </button>
+    <button class = "btn btn-outline-danger" type ="submit" routerLink="/list-cam">
+        Annuler</button></div>
+
+
+</form>

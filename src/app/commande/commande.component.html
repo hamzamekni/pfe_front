@@ -1,0 +1,141 @@
+
+<div class="scrollmenu">
+  <div class="comContainer ">
+    <div class="button">
+      <button type="button" class="btn btn-primary" routerLink="/add-commande">Ajouter Commande</button>
+    </div>
+  
+    <div class="table catTable">
+      <ul class="table-header">
+        <li class="HItem HItem1">
+          Id Commande
+        </li>
+        <li class="HItem HItem2">
+          Date Commande
+        </li>
+        <li class="HItem HItem2">
+          Mode Paiment
+        </li>
+        <li class="HItem HItem2">
+          Paiment Valide
+        </li>
+        <li class="HItem HItem2">
+          Date Paiment
+        </li>
+        <li class="HItem HItem2">
+          Id Facture
+        </li>
+        <li class="HItem HItem2">
+          Id Livraison
+        </li>
+        <li class="HItem HItem2">
+          Id Ligne Commande
+        </li>
+        <li class="HItem HItem3">
+          Actions
+        </li>
+      </ul>
+      <ul  *ngFor = "let commande of commandes" class="catTable-body">
+        <li class="BItem BItem1">
+          {{ commande.id }}
+        </li>
+        <li class="BItem BItem2">
+          {{ commande.dateCommande }} 
+        </li>
+        <li class="BItem BItem2">
+          {{ commande.modePaiment }} 
+        </li>
+        <li class="BItem BItem2">
+          {{ commande.paimentValide }} 
+        </li>
+        <li class="BItem BItem2">
+          {{ commande.datePaiment }} 
+        </li>
+        <li class="BItem BItem2">
+          {{ commande.facture }} 
+        </li>
+        <li class="BItem BItem2">
+          {{ commande.idLigne }} 
+        </li>
+        <li class="BItem BItem2">
+          {{ commande.idLivrivation }}
+        </li>
+        <li class="BItem BItem3">
+          <div class="action-toggle">
+            <span>...</span>
+            <div class="action-container">
+              <button   (click) = "updateCommande(commande.id)" type="button" class="btn btnUpdate">Mise à Jour</button>
+              <button (click) = "deleteCommande(commande.id)" type="button" class="btn btnDelete">Supprimer</button>
+            </div>
+          </div>
+        </li>
+        <li class="editCom" *ngIf="editComEnable && id == commande.id">
+          <div class="popup-container">
+            <div class="popup-header">
+              <span class="close" (click)="close()">X</span>
+            </div>
+            <div class="popup-body scroll-container">
+              <form>
+    
+      
+                <div class="form-group" >
+                    <label> Id Commande</label>
+                    <input type="text" readonly class ="form-control" id = "id"
+                        [(ngModel)] = "newCommande.id" name = "id">
+                </div>
+             
+                <div class="form-group">
+                    <label> Date Commande</label>
+                    <input type="date" class ="form-control" id = "dateCommande"
+                        [(ngModel)] = "newCommande.dateCommande" name = "dateCommande">
+                </div>
+                
+                <div class="form-group">
+                    <label>Mode Paiment</label>
+                    <input type="text" class ="form-control" id = "modePaiment"
+                        [(ngModel)] = "newCommande.modePaiment" name = "modePaiment">
+                </div>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)] = "newCommande.modePaiment" value="" id="modePaiment" name="modePaiment">
+                    <label class="form-check-label" for="flexCheckDefault">
+                     Paiment Valider
+                    </label>
+                  </div>
+            
+                <div class="form-group">
+                    <label> Date Paiment  </label>
+                    <input type="date" class ="form-control" id = "dateCommande"
+                        [(ngModel)] = "newCommande.dateCommande" name = "dateCommande">
+                </div>
+            
+                <div class="form-group">
+                    <label> Id Facture</label>
+                    <input type="text" class ="form-control" id = "facture"
+                        [(ngModel)] = "newCommande.facture" name = "facture">
+                </div>
+            
+                <div class="form-group">
+                    <label> Id Livraison</label>
+                    <input type="text" class ="form-control" id = "idLivrivation"
+                        [(ngModel)] = "newCommande.idLivrivation" name = "idLivrivation">
+                </div>
+                <div class="form-group">
+                    <label> Id Ligne Commande</label>
+                    <input type="text" class ="form-control" id = "idLigne"
+                        [(ngModel)] = "newCommande.idLigne" name = "idLigne">
+                </div>
+            
+                <button class = "btn btn-success" type ="submit">Modifier</button>
+            
+            </form>
+            
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>  
+  </div>
+  
+</div>
+

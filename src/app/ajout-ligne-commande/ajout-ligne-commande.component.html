@@ -1,0 +1,25 @@
+<form (ngSubmit) = "onSubmit()" >
+    
+					
+					
+					
+                        
+    <div class="form-group">
+        <label>Quantité Commandé</label>
+        <input type="text" class ="form-control" id = "quantiteCommande"
+        placeholder="Quantité Commandé"  [(ngModel)] = "ligneCommande.quantiteCommande" name = "quantiteCommande">
+    </div>
+
+    <div class="form-group">
+        <label>Id Commande</label>
+        <input type="text" class ="form-control" id = "idCommande"
+        placeholder="Id Commande" [(ngModel)] = "ligneCommande.idCommande" name = "idCommande">
+    </div>
+    
+    
+   
+    <button class = "btn btn-outline-primary" type ="submit">Confirmer</button>
+    <button class = "btn btn-outline-danger" type ="submit" routerLink="/ligne-commande">
+        Annuler</button>
+
+</form>

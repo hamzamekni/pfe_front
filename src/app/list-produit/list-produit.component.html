@@ -1,0 +1,157 @@
+<div class="scrollmenu">
+  <div class="prodContainer ">
+      <div class="button">
+          <button type="button" class="btn btn-primary" routerLink="/add-produit">Ajouter Produit</button>
+      </div>
+  
+      <div class="table catTable  ">
+        <ul class="table-header">
+          <li class="HItem HItem1">
+            Image Produit
+          </li>
+          <li class="HItem HItem2">
+            Nom Produit
+          </li>
+          <li class="HItem HItem2">
+            TVA
+          </li>
+          <li class="HItem HItem2">
+            Prix
+          </li>
+          <li class="HItem HItem2">
+            Description
+          </li>
+          <li class="HItem HItem2">
+            status
+          </li>
+          <li class="HItem HItem2">
+            Id Stock
+          </li>
+          <li class="HItem HItem2">
+            Id Ligne Commande
+          </li>
+          <li class="HItem HItem2">
+            Créé à
+          </li>
+          <li class="HItem HItem2">
+            Mise à Jour à
+          </li>
+          <li class="HItem HItem3">
+           Action
+          </li>
+        </ul>
+  
+        <ul  *ngFor = "let produit of produits" class="catTable-body  ">
+          <li class="BItem BItem1">
+            <img src="http://localhost:8000/uploads/images/products/{{produit.image}}" width="100" height="100">
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.nameProduct }} 
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.tva }} 
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.prixProgduit }}
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.description }} 
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.status }}
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.idStock }}
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.idLigne }}
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.createdAt }} 
+          </li>
+          <li class="BItem BItem2">
+            {{ produit.updatedAt }} 
+          </li>
+          <li class="BItem BItem3">
+            <div class="action-toggle">
+              <span>...</span>
+              <div class="action-container">
+                <button   (click) = "updateProduit(produit.id)" type="button" class="btn btnUpdate" >Mise à Jour</button>
+                <button (click) = "deleteProduit(produit.id)" type="button" class="btn btnDelete">Supprimer</button>
+              </div>
+            </div>
+          </li>
+          <li class="editProd" *ngIf="editProdEnable && id == produit.id">
+            <div class="popup-container">
+              <div class="popup-header">
+                <span class="close" (click)="close()">X</span>
+              </div>
+              <div class="popup-body scroll-container">
+                
+                <form>
+  
+                  <div class="form-group">
+                      <img src="http://localhost:8000/api/products?imageFile=produit.image" id="image" name="image" type="file" >
+                   
+                  </div>
+                       
+                  
+                  <div class="form-group" >
+                      <label> Nom Produit</label>
+                      <input type="text" class ="form-control" id = "name"
+                          [(ngModel)] = "newProduit.nameProduct" name = "name">
+                  </div>
+              
+                  <div class="form-group">
+                      <label> TVA</label>
+                      <input type="number" class ="form-control" id = "tva"
+                          [(ngModel)] = "newProduit.tva" name = "tva">
+                  </div>
+              
+              
+               
+                  
+               
+                  <div class="form-group">
+                      <label> Prix Produit</label>
+                      <input type="text" class ="form-control" id = "prix"
+                          [(ngModel)] = "newProduit.prixProgduit" name = "prix">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label>Description</label>
+                      <input type="text" class ="form-control" id = "description"
+                          [(ngModel)] = "newProduit.description" name = "description">
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" [(ngModel)] = "newProduit.status" value="" id="status" name="status">
+                      <label class="form-check-label" for="flexCheckDefault">
+                       Status
+                      </label>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label> Id Stock</label>
+                      <input type="text" class ="form-control" id = "idStock"
+                          [(ngModel)] = "newProduit.idStock" name = "idStock">
+                  </div>
+              
+                  <div class="form-group">
+                      <label> Id Ligne Commande</label>
+                      <input list="browsers" class ="form-control" id = "idLigne"
+                          [(ngModel)] = "newProduit.idLigne" name = "idLigne">
+                  </div>
+              
+                  <button (click)="onSubmit()" class = "btn btn-success" type ="submit" >Modifier</button>
+              
+              </form>
+              
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+  
+      
+  </div>
+  </div>

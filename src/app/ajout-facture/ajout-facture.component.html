@@ -1,0 +1,30 @@
+<form (ngSubmit) = "onSubmit()" >
+    
+					
+					
+					
+                        
+    
+
+    <div class="form-group">
+        <label> Date Facture</label>
+        <input type="date" class ="form-control" id = "dateFacture	"
+        placeholder="Date Facture" [(ngModel)] = "facture.dateFacture	" name = "dateFacture	">
+    </div>
+    <div class="form-group">
+        <label> Prix Total</label>
+        <input type="text" class ="form-control" id = "prixTotal"
+        placeholder="Prix Total" [(ngModel)] = "facture.prixTotal" name ="date_facture">
+    </div>
+    <div class="form-group">
+        <label> Numéro Facture</label>
+        <input type="text" class ="form-control" id = "numFacture"
+        placeholder="Numéro Facture" [(ngModel)] = "facture.numFacture" name ="numFacture">
+    </div>
+    
+   
+    <button class = "btn btn-outline-primary" type ="submit">Confirmer</button>
+    <button class = "btn btn-outline-danger" type ="submit" routerLink="/facture">
+        Annuler</button>
+
+</form>

@@ -1,0 +1,42 @@
+
+       		<div class="button">
+                <button type="button" class="btn btn-primary" routerLink="/add-ligneCommande">Ajouter Ligne Commande</button>
+            </div>
+       <br>
+       <br>
+       
+
+				<table class="table"  id="tblCustomers">
+					
+					<thead class="thead-dark">
+					  <tr class="header">
+					
+						<th scope="col">Id Ligne Commande</th>
+						<th scope="col">Quantité Commandé</th>
+						<th scope="col">Id Commande</th>
+						<th></th>
+					  </tr>
+					</thead>
+					<tbody id="geeks">
+					 
+					
+						<tr *ngFor = "let ligneCommade of ligneCommades">
+                            
+							<td> {{ ligneCommade.id }} </td>
+							<td> {{ ligneCommade.quantiteCommande }} </td>
+							<td> {{ ligneCommade.idCommande }} </td>
+							
+							<td><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    							<button (click) = "updateLigneCommande(ligneCommade.id)" type="button" class="btn btn-outline-success" routerLink="/modifier-ligneCommande">Update</button>
+        						<button (click) = "deleteLigneCommande(ligneCommade.id)" type="button" class="btn btn-outline-danger" >Delete</button></div>
+    						</td>
+					  </tr>
+
+					</tbody>
+				  </table>
+
+                  <div>
+    
+                    <input type="button" class="btn btn-secondary" id="btnExport" value="Export" onclick="Export()" />
+                </div>
+                

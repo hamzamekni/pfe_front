@@ -1,0 +1,127 @@
+
+<div class="auth-wrapper auth-v2">
+  <div class="auth-inner row m-0">
+    <!-- Brand logo-->
+    <!-- /Brand logo-->
+    <!-- Left Text-->
+    <div class=" d-lg-flex col-lg-8  " >
+      <div class="  img ">
+        <img
+          class="img-fluid"
+          src="/assets/img/224411825e_50171213_crm.jpg" width="5000" height="6000" 
+          alt="Login "
+        />
+      </div>
+    </div>
+    <!-- /Left Text-->
+    <!-- Login-->
+    <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5 ">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+        <h2 class="card-title font-weight-bold mb-1">Bienvenu sur crm For Clients👋</h2>
+        <p class="card-text mb-2">Veuillez vous connecter à votre compte et commencer l'aventure</p>
+      
+        <form class="auth-login-form mt-2" [formGroup]="form" (submit)="submit()">
+          <div  >
+            <label class="form-label" for="login-email">Email</label>
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              autofocus=""
+              tabindex="1"
+            />
+            
+          </div>
+          <div >
+            <div class="d-flex justify-content-between">
+              <label for="login-password">Mot de Passe</label
+              >
+            </div>
+            <div class="input-group input-group-merge form-password-toggle">
+              <input
+                formControlName="password"
+                class="form-control form-control-merge"
+                type="password"
+                placeholder="············"
+                tabindex="2"
+              />
+              
+              
+            </div>
+            <a routerLink="/forgot-password"><small>Mot de passe oublié?</small></a>
+            </div>
+          
+          <div>
+            <div class="custom-control custom-checkbox">
+              <input class="custom-control-input" id="remember-me" type="checkbox" tabindex="3" />
+              <label class="custom-control-label" for="remember-me"> Souviens-toi de moi</label>
+            </div>
+          </div>
+          <button  class="btn btn-primary btn-block" tabindex="4" type="submit" rippleEffect>
+            <span   ></span>Login
+          </button>
+        </form>
+        <p class="text-center mt-2">
+          <span>New on our platform?</span
+          ><a routerLink="/register"><span>&nbsp;Créer un compte</span></a>
+        </p>
+        <div class="divider my-2">
+          <div class="divider-text">ou</div>
+        </div>
+        <div class="social">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+         <a href="#" class="fa fa-google"></a>
+        </div>
+        
+          
+       
+      </div>
+    </div>
+    <!-- /Login-->
+  </div>
+</div>
+
+
+<style>
+  .img{
+  margin-top: 50px;
+
+
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.divider{
+  text-align: center;
+}
+.social{
+  text-align: center;
+}
+</style>

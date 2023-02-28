@@ -1,0 +1,32 @@
+<form (ngSubmit) = "onSubmit()">
+    
+    <div class="form-group" >
+        <label> Id Stock</label>
+        <input type="text" readonly class ="form-control" id = "id"
+            [(ngModel)] = "stock.id" name = "id">
+    </div>
+
+    <div class="form-group">
+        <label>      Quantité Stock</label>
+        <input type="text" class ="form-control" id = "quantiteStock"
+            [(ngModel)] = "stock.quantiteStock" name = "quantiteStock">
+    </div>
+
+    <div class="form-group">
+        <label>      Status</label>
+        <input type="number" class ="form-control" id = "status"
+            [(ngModel)] = "stock.status" name = "status">
+    </div>
+
+
+ 
+   
+
+ 
+    
+
+
+    <button class = "btn btn-success" type ="submit">Modifier</button>
+
+</form>
+
